@@ -1,0 +1,211 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.directory-card {
+  width: 100%;
+  max-width: 820px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 28px 28px 32px 28px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+/* Encabezado */
+.directory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.directory-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.directory-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.demo-badge {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Buscador */
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 22px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  color: #1f2937;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.2);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Barra de estado */
+.directory-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.favorites-counter {
+  font-weight: 700;
+  font-size: 16px;
+  color: #111827;
+}
+
+.visible-counter {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Grid de usuarios */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+  .directory-card {
+    padding: 20px;
+  }
+}
+
+/* Tarjeta individual */
+.user-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.user-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 10px 0;
+  word-break: break-all;
+}
+
+.user-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 20px 0;
+}
+
+.location-icon {
+  width: 15px;
+  height: 15px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+/* Botón Favorito */
+.favorite-btn {
+  margin-top: auto;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.favorite-btn.active {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+.star-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.favorite-btn.active .star-icon {
+  color: #f59e0b;
+}
+
+/* Mensajes de estado */
+.state-message {
+  text-align: center;
+  padding: 32px 16px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.state-message.error {
+  color: #ef4444;
+}
