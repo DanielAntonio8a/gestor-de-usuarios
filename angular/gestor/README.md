@@ -1,59 +1,39 @@
-# Gestor
+# Directorio de usuarios — Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+Implementación del directorio de usuarios con Angular 22. Consulta los datos desde https://jsonplaceholder.typicode.com/users.
 
-## Development server
+## Instalación y ejecución
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Abra una terminal **dentro de `angular/gestor`** y ejecute:
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abra http://localhost:4200/ en el navegador. Para detener el servidor, pulse `Ctrl + C`.
+
+## Funcionalidades
+
+- Consulta de usuarios mediante un servicio Angular.
+- Tarjetas con nombre, correo y ciudad.
+- Búsqueda por nombre en tiempo real.
+- Favoritos con contador actualizado.
+- Mensajes de carga y error.
+
+Los favoritos son temporales: no se guardan en una base de datos.
+
+## Comandos disponibles
 
 ```bash
-ng generate --help
+npm test -- --watch=false
+npm run build
 ```
 
-## Building
+El primero ejecuta las pruebas configuradas; el segundo compila el proyecto. Verifique los resultados en su equipo antes de documentarlos como aprobados.
 
-To build the project run:
+## Requisitos
 
-```bash
-ng build
-```
+Node.js compatible con Angular 22 (por ejemplo, Node.js 22.22.3 o superior dentro de la rama 22), npm y conexión a Internet. No necesita json-server.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Consulte el [README principal](../../README.md) para ejecutar ambos frameworks y agregar evidencias.
