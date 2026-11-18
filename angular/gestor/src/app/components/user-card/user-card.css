@@ -1,0 +1,84 @@
+/* Tarjeta individual */
+.user-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.user-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 10px 0;
+  word-break: break-all;
+}
+
+.user-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 20px 0;
+}
+
+.location-icon {
+  width: 15px;
+  height: 15px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+/* Botón Favorito */
+.favorite-btn {
+  margin-top: auto;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.favorite-btn.active {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+.star-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.favorite-btn.active .star-icon {
+  color: #f59e0b;
+}

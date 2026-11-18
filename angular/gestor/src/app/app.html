@@ -9,10 +9,7 @@
     </div>
 
     <!-- Buscador -->
-    <div class="search-box">
-      <input type="text" class="search-input" placeholder="Buscar usuario por nombre..." [ngModel]="searchTerm()"
-        (ngModelChange)="searchTerm.set($event)" />
-    </div>
+    <app-search-bar [value]="searchTerm()" (valueChange)="searchTerm.set($event)" />
 
     <!-- Barra de estado -->
     <div class="directory-status">
@@ -36,27 +33,8 @@
 
     <!-- Cuadrícula de tarjetas de usuario -->
     @if (!loading() && !error()) {
-    <div class="users-grid">
-      @for (user of filteredUsers(); track user.id) {
-      <div class="user-card">
-        <h2 class="user-name">{{ user.name }}</h2>
-        <p class="user-email">{{ user.email }}</p>
-        <p class="user-location">
-          <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          <span>{{ user.address?.city || 'Sin ciudad' }}</span>
-        </p>
-        <button type="button" class="favorite-btn" [class.active]="isFavorite(user.id)"
-          (click)="toggleFavorite(user.id)">
-          <span class="star-icon">{{ isFavorite(user.id) ? '★' : '☆' }}</span>
-          <span>Favorito</span>
-        </button>
-      </div>
-      }
-    </div>
+    <app-user-grid [users]="filteredUsers()" [favorites]="favorites()"
+      (toggleFavorite)="toggleFavorite($event)" />
 
     @if (filteredUsers().length === 0) {
     <div class="state-message">No se encontraron usuarios con ese nombre.</div>

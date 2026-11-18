@@ -1,0 +1,17 @@
+<div class="user-card">
+  <h2 class="user-name">{{ user().name }}</h2>
+  <p class="user-email">{{ user().email }}</p>
+  <p class="user-location">
+    <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+    <span>{{ user().address?.city || 'Sin ciudad' }}</span>
+  </p>
+  <button type="button" class="favorite-btn" [class.active]="isFavorite()"
+    (click)="toggleFavorite.emit(user().id)">
+    <span class="star-icon">{{ isFavorite() ? '★' : '☆' }}</span>
+    <span>Favorito</span>
+  </button>
+</div>

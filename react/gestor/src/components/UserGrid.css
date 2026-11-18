@@ -1,0 +1,16 @@
+/* Grid de usuarios */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-card {
+    padding: 20px;
+  }
+}

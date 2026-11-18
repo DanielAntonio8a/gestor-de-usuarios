@@ -1,11 +1,12 @@
 import { Component, OnInit, inject, signal, computed } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { UsersService, User } from './services/users.service';
+import { SearchBarComponent } from './components/search-bar/search-bar';
+import { UserGridComponent } from './components/user-grid/user-grid';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [SearchBarComponent, UserGridComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -45,9 +46,5 @@ export class App implements OnInit {
         ? prev.filter((id) => id !== userId)
         : [...prev, userId]
     );
-  }
-
-  isFavorite(userId: number): boolean {
-    return this.favorites().includes(userId);
   }
 }
