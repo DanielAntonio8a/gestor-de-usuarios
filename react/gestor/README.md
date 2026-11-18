@@ -1,16 +1,40 @@
-# React + Vite
+# Directorio de usuarios — React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Implementación del directorio de usuarios con React 19 y Vite. Consume https://jsonplaceholder.typicode.com/users.
 
-Currently, two official plugins are available:
+## Instalación y ejecución
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Abra una terminal **dentro de `react/gestor`** y ejecute:
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Abra la dirección que muestre Vite, normalmente http://localhost:5173/. Para detenerlo, pulse `Ctrl + C`.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Consulta de usuarios con `fetch`.
+- Tarjetas con nombre, correo y ciudad.
+- Búsqueda por nombre mientras se escribe.
+- Favoritos con contador actualizado.
+- Mensajes de carga y error.
+
+Los favoritos son temporales: no se guardan en una base de datos.
+
+## Comandos disponibles
+
+```bash
+npm run build
+npm run lint
+npm run preview
+```
+
+En la versión revisada todavía no hay un script `npm test`; antes de entregar hay que configurar una prueba unitaria y añadir su comando al README.
+
+## Requisitos
+
+Node.js compatible con Vite 8, npm y conexión a Internet. No necesita json-server ni backend propio.
+
+Consulte el [README principal](../../README.md) para ejecutar ambos frameworks y agregar evidencias.
